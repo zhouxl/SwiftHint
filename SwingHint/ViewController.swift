@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let hint: String = "爱笑的人运气都好"
+        let hintView = SwingHint()
+        hintView.topCenter = CGPoint(x: 100, y: 200)
+        view.addSubview(hintView)
+        hintView.updateText(hint)
     }
-
-
 }
-
