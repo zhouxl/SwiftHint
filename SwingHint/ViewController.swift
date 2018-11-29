@@ -11,12 +11,22 @@ import Foundation
 
 class ViewController: UIViewController {
 
+    let hintView = SwingHint()
+    var topY: CGFloat = 200
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let hint: String = "爱笑的人运气都好"
-        let hintView = SwingHint()
-        hintView.topCenter = CGPoint(x: 100, y: 200)
+        let hint: String = "爱笑的人运气不会太差"
+        hintView.showText(hint)
+        hintView.topCenter = CGPoint(x: 0, y: 200)
         view.addSubview(hintView)
-        hintView.updateText(hint)
+
     }
+
+    @IBAction func buttonAction() {
+        topY += 30
+        hintView.topCenter = CGPoint(x: 0, y: topY)
+        hintView.showText("越努力，越幸运")
+    }
+
 }
